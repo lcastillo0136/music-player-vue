@@ -1,0 +1,45 @@
+<template>
+  <!-- .aside -->
+  <aside class="bg-black dk aside hidden-print" v-bind:class="{'nav-xs': !openMenu}" id="nav">
+    <section class="vbox">
+      <section class="w-f-md scrollable">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 859px;">
+          <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railopacity="0.2" style="overflow: hidden; width: auto; height: 859px;">
+            <!-- nav -->
+            <nav class="nav-primary hidden-xs">
+              <ul class="nav bg clearfix">
+                <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted"> Discover </li>
+                <li><router-link to="/"><i class="icon-disc icon text-success"></i> <span class="font-bold">What's new</span></router-link></li>
+                <li><router-link to="/songs"><i class="icon-music-tone-alt icon text-info"></i> <span class="font-bold">Genres</span> </router-link></li>
+                <li><router-link to="/artist"><i class="icon-users icon text-info"></i> <span class="font-bold">Artist</span></router-link></li>
+                <li><router-link to="/songs/tags/All"><i class="icon-tag icon text-info"></i> <span class="font-bold">Tags</span></router-link></li>
+                <li><router-link to="/download"><i class="icon-cloud-download icon text-info"></i> <span class="font-bold">Download</span></router-link></li>
+                <!-- <li> <a href=""> <i class="icon-drawer icon text-primary-lter"></i> <b class="badge bg-primary pull-right">6</b> <span class="font-bold">Events</span> </a> </li>
+                <li> <a href=""> <i class="icon-list icon text-info-dker"></i> <span class="font-bold">Listen</span> </a> </li>
+                <li> <a href="" data-target="#content" data-el="#bjax-el" data-replace="true"> <i class="icon-social-youtube icon text-primary"></i> <span class="font-bold">Video</span> </a> </li> -->
+                <li class="m-b hidden-nav-xs"></li>
+              </ul>
+            </nav> <!-- / nav -->
+          </div>
+          <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 10px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 0px; height: 859px;"></div>
+          <div class="slimScrollRail" style="width: 10px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 0px;"></div>
+        </div>
+      </section>
+    </section>
+  </aside> <!-- /.aside -->
+</template>
+
+<script>
+export default {
+  name: 'Menu',
+  computed: {
+    openMenu: function() {
+      return this.$store.getters.isMenuOpen
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+
+</style>
